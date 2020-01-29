@@ -1,0 +1,357 @@
+\documentclass[openany]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdftitle={Food I Can Make in Less Than an Hour},
+            pdfauthor={Jonathan Emery},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{booktabs}
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage[contents,nonumber,index]{cuisine}
+\usepackage{nicefrac}
+\usepackage{xcolor}
+\renewcommand{\recipestepnumberfont}{\color[HTML]{C59F61}}% must use uppercase letters
+\renewcommand*{\recipenumberfont}{\large\bfseries\sffamily} %set recipe number font
+\renewcommand*{\recipequantityfont}{\sffamily\bfseries} %set recipe quantity font
+\renewcommand*{\recipeunitfont}{\sffamily} %set recipe unit font
+\renewcommand*{\recipeingredientfont}{\sffamily} %set recipe ingredient font
+\renewcommand*{\recipefreeformfont}{\itshape} %set recipe free-form font
+\RecipeWidths{1.25\columnwidth}
+{0.2\columnwidth}
+{0.05\columnwidth}
+{0.4\columnwidth}
+{0.1\columnwidth}
+{0.1\columnwidth}
+%\RecipeWidths{Total recipe width} {Number of servings width} {Step
+%number width} {Ingredient width} {Quantity width} {Units width}
+
+\title{Food I Can Make in Less Than an Hour}
+\author{Jonathan Emery}
+\date{2020-01-29}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\chapter*{Welcome}\label{welcome}
+\addcontentsline{toc}{chapter}{Welcome}
+
+This is a book of recipes using the
+\href{https://bookdown.org/}{Bookdown} package for making books and
+long-form reports.
+
+\section*{Contribute a Recipe}\label{contribute-a-recipe}
+\addcontentsline{toc}{section}{Contribute a Recipe}
+
+You can contribute a recipe by following the instructions on the
+\href{https://github.com/chrisdaaz/recipe-bookdown}{GitHub repository}.
+\textbf{Enjoy!}
+
+\href{./recipe-bookdown.pdf}{Download the Book}
+
+\section*{Contacts}\label{contacts}
+\addcontentsline{toc}{section}{Contacts}
+
+\begin{itemize}
+\tightlist
+\item
+  Jonathan Emery:
+  \href{mailto:jonathan.emery@northwestern.edu}{\nolinkurl{jonathan.emery@northwestern.edu}}
+\item
+  Chris diaz:
+  \href{mailto:chris-diaz@northwestern.edu}{\nolinkurl{chris-diaz@northwestern.edu}}
+\end{itemize}
+
+\chapter{Banana Bread}\label{banana-bread}
+
+\begin{recipe}[BananaBread]{J. Wolff Banana Bread}{1 loaf}{90 min (30 min prep, 60 min bake)}
+\freeform This recipe makes one loaf of banana bread. Bake it in a J. Wolff bread baker --- although other stone breadpans should work, presumably.
+\freeform\rule{\textwidth}{0.05pt}
+
+\newstep Preheat oven to 350 \degrees F.
+\ingredient[2-3]{}{overripe bananas}
+
+Mash bananas in a mixing bowl until relatively smooth.
+
+\ingredient[\fr34]{cup}{sugar}
+\ingredient[1]{tsp}{vanilla}
+\ingredient[2]{tbs}{oil (canola or olive)}
+\ingredient[\fr13]{cup}{milk)}
+
+Beat sugar, vanilla, olive oil, and milk into the mashed bananas.
+
+\ingredient[1\fr12]{cup}{flour}
+\ingredient[\fr13]{tsp}{baking soda}
+\ingredient[\fr3/4]{tsp}{salt}
+\ingredient[\fr3/4]{tbs}{ground cinnamon}
+\ingredient[\fr1/4]{tsp}{nutmeg}
+
+Add flour, baking soda, salt, cinnamon, and nutmeg. Gently mix just to incorporate --- do not overmix.
+
+\ingredient[\fr12]{cup}{chocolate chips or walnuts}
+
+Fold in walnuts or chocolate chips (or both).
+
+\ingredient[\fr13]{cup}{boiling water}
+
+Pour in boiling water and mix until batter is smooth. It may be a bit watery.
+
+\newstep
+
+Grease stoneware baker and pour in batter. Cook for 60-70 min (check frequently) or until a knife inserted into the bread comes out clean.
+\end{recipe}
+
+\chapter{Farmers Market Pasta}\label{farmers-market-pasta}
+
+\begin{recipe}[FarmersMarketPasta]{Farmers' Market Pasta}{6 Portions}{30 min}
+\freeform Grab some stuff from the farmers' market and make this pasta. Eat it hot or cold.
+\freeform\rule{\textwidth}{0.05pt}
+\ingredient[12]{oz}{cavatappi}
+
+Cook pasta according to package directions for \textit{al dente}. Drain and transfer pasta to large bow.
+
+\ingredient[1 of 4]{tbs}{olive oil}
+\ingredient[2]{cup}{multicolored cherry tomatoes}
+\ingredient[4]{clove}{garlic}
+\ingredient[1]{tsp}{kosher salt}
+\ingredient[\fr12]{tsp}{ground black pepper}
+
+Heat 1 tbs oil in a large skillet at medium heat. Add tomatoes, garlic, salt, and pepper. Cook, stirring often, until tomatoes begin to soften (2-3 min).  
+
+\ingredient[1]{}{zucchini}
+\ingredient[1]{}{red onion, wedged}
+
+Add zucchini and onion and continue cooking until tomatoes burst and zucchini is almost tender (3-4 min).
+
+\ingredient[1]{cup}{corn}
+
+Finally, add corn and cook, stirring constantly, for 1 additional minute.
+
+\ingredient[2]{cups}{packed arugula}
+\ingredient[1]{cup}{fresh basil, torn}
+\ingredient[3 of 4]{tbs}{olive oil}
+
+Add tomato mixture to posta. Toss with arugula, basil, and remaining olive oil.
+
+\ingredient[\fr12]{cup}{shaved parmesan}
+
+Top with parmesan cheese and serve warm or cold.
+
+
+\freeform\rule{\textwidth}{0.05pt}
+
+\freeform\rule{\textwidth}{0.05pt}
+\textit{nomnomnomnomnom}!
+\end{recipe}
+
+\%From RealSimple
+
+\chapter{Moroccan Lamb (or Turkey)
+Stew}\label{moroccan-lamb-or-turkey-stew}
+
+\begin{recipe}[MoroccanStew]{Moroccan Lamb (or Turkey) Stew}{4 Portions}{1 hour}
+\freeform One of my absolute favorite meals.
+\freeform\rule{\textwidth}{0.05pt}
+\ingredient[1]{lb}{lamb or turkey}
+
+In a well-oiled pan, saut\'{e} meat until over medium-high heat until cooked through. Set cooked meat aside. Deglaze pan if you like, or if meat was fatty.
+
+\ingredient[2]{cups}{onion}
+\ingredient[\fr12]{cup}{carrots}
+
+Add oil to pan. Chop onions vertically and carrots diagonally. Add to pan and saut\'{e} for 4-5 minutes on medium heat, or until soft.
+
+\ingredient[\fr34]{tps}{cumin}
+\ingredient[\fr34]{tps}{cinnamon}
+\ingredient[\fr12]{tps}{coriander}
+\ingredient[\fr14]{tps}{red pepper flakes}
+
+Add coriander, cumin, red pepper flakes, and cinnamon to vegetables, quickly mixing in spices. Saut\'{e} for 30 seconds, stirring constantly.
+
+\ingredient[]{}{Reserved lamb/turkey}
+\ingredient[2]{cups}{broth}
+\ingredient[\fr12]{cup}{golden raisins}
+\ingredient[3]{tbs}{tomato paste}
+\ingredient[1\fr12]{tbs}{grated lemon rind}
+\ingredient[\fr14]{tps}{salt}
+\ingredient[15]{oz}{chick peas (rinsed, drained)}
+
+Add reserved meat, broth, raisins, tomato paste, lemon rind, salt, and chick peas. Bring to a boil, then reduce heat and simmer for 4 minutes (or until mixture thickens). Remove from heat
+
+\ingredient[\fr12]{cup}{chopped, fresh cilantro}
+\ingredient[1]{tbs}{fresh lemon juice}
+
+Stir in cilantro and lemon juice.
+
+
+%\freeform\rule{\textwidth}{0.05pt}\newpage
+\freeform\rule{\textwidth}{0.05pt}
+%\newstep
+
+%\freeform\rule{\textwidth}{0.05pt}
+%Serve with couscous or some grain and fresh bread. Yummy!
+\end{recipe}
+
+\chapter{Orzo Salad}\label{orzo-salad}
+
+\begin{recipe}{Spinach Orzo Salad}{20 Portions}{30 minutes}
+\freeform Good to share as a holiday salad!
+\freeform\rule{\textwidth}{0.05pt}
+\ingredient[16]{oz}{Orzo pasta}
+
+Cook orzo according to directions on package --- slightly al dente is fine as well. Drain and rise with cold water.
+
+\ingredient[9]{oz}{spinach}
+\ingredient[\fr34]{cup}{dried cranberries}
+
+Finely chop dried cranberries (craisins) and spinach. Add to orzo in a large serving bowl.
+
+\ingredient[\fr34]{cup}{feta cheese}
+\ingredient[\fr34]{cup}{balsamic vinaigrette}
+\ingredient[\fr12]{tsp}{dried basil}
+\ingredient[\fr14]{tsp}{white pepper, ground}
+
+Add these ingredients to the mix and toss so that greens are well-coated with the vinaigrette. Flavored vinaigrette is a nice touch (e.g., strawberry). Refrigerate if not serving immediately.
+
+\ingredient[\fr14]{cup}{sunflower seeds}
+
+Toss in sunflower seeds prior to serving.
+
+%\freeform\rule{\textwidth}{0.05pt}\newpage
+\freeform\rule{\textwidth}{0.05pt}
+%\newstep
+
+\freeform Jon's recipe is the best!!!
+
+%\freeform\rule{\textwidth}{0.05pt}
+%Serve with couscous or some grain and fresh bread.
+\end{recipe}
+
+\chapter{Creamy Turkey Noodle Soup}\label{creamy-turkey-noodle-soup}
+
+\begin{recipe}{Creamy Turkey Noodle Soup}{6 Servings}{30 minutes} %{Title}{Servings}{Prep time}
+\freeform A soup that Mimi makes after Thanksgiving.       %Freeform formats a general comment.
+\freeform\rule{\textwidth}{0.05pt}                         %Creates a nice horizontal rule.
+
+%1st step ingredients---------------------------------------
+    %\ingredient[quantity]{unit}{ingredient}
+    %\Ingredient{ingredient and quantity}
+\ingredient[3]{cups}{turkey}
+
+%1st step action
+Use leftover Thanksgiving turkey (or bake). Set aside.
+
+%2nd step ingredients--------------------------------------
+\ingredient[5]{tbsp}{butter}
+\ingredient[2]{}{carrots}
+\ingredient[1]{}{shallot}
+\ingredient[1]{tbsp}{celery ceeds}
+
+%2nd step action:
+Saut\'{e} ingredients in butter for 5 minutes.
+
+%3rd step ingredients--------------------------------------
+\ingredient[\fr13]{cup}{flour} %\fr means fraction: so \fr13 = 1/3
+\ingredient[32]{oz}{chicken broth}
+\ingredient[\fr12]{cup}{half and half}
+\ingredient[\fr12]{cup}{milk}
+
+%3rd step action:
+First stir in flour to saut\'{e}d vegetebles and then add liquids and bring mixture to a boil.
+
+%4th step ingredients--------------------------------------
+\ingredient[6]{oz}{Reames brand noodles} 
+
+%4th step action:
+Add dry noodles to soup and simmer for about 20 minutes.
+
+Cook orzo according to directions on package --- slightly al dente is fine as well. Drain and rise with cold water.
+
+%5th step ingredients--------------------------------------
+\ingredient[\fr14]{tsp}{salt}
+\ingredient[\fr14]{tsp}{pepper}
+
+Add salt and pepper to taste.
+
+\freeform\rule{\textwidth}{0.05pt} 
+
+\freeform Good to eat for... weeks?
+
+\end{recipe}
+
+\end{document}
